@@ -1209,6 +1209,7 @@ module PS3();
 
 
 	int Q38[$];
+	int temp_38[$];
 
 	initial begin
 		$display("\n--------------------------------------------------------------------------------------\n");
@@ -1219,13 +1220,33 @@ module PS3();
 
 		for(int i=0; i<Q38.size(); i++) begin
 			for(int j=i+1; j<Q38.size(); j++) begin
-
+				temp_38.push_back(Q38[i] + Q38[j]);
+				//$display("Q38[%0d] + Q38[%0d] = %0d", i, j, (Q38[i] + Q38[j]));
 			end
 		end 
 
+		$display("\ntemp_38 : %0p", temp_38);
+		temp_38.sort(); // sort the temp array to find the minimum sum near to zero
+		$display("\ntemp_38 : %0p", temp_38);
+		$display("Sum of two elements near to zero is : %0d", temp_38[0]);
+
 	end
 
-	
+	int Q39[$];
+	int random_num;
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q39. generate random elements in the range 10-100 in a array----------\n");
+
+		repeat(10) begin // generate 10 random numbers
+			// $urandom_range(min, max) generates a random number in the range [
+			random_num = $urandom_range(10, 100); // generate random number in the range 10-100
+			Q39.push_back(random_num);
+		end
+
+		$display("Q39 : %0p", Q39);
+	end
 
 endmodule : PS3
 
