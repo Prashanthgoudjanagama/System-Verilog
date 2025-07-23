@@ -1251,13 +1251,394 @@ module PS3();
 endmodule : PS3
 
 
+module PS4();
+/*
+		--> practice set-4:
+              Q40. fibbinacci series in array?
+              Q41. factorial?
+              Q42. prime num?
+              Q43. even and odd?
+              Q44. leap year?
+              Q45. palindrome num?
+              Q46. GCD of two num's?
+              Q47. LCM of two num's?
+              Q48. Armstrong num?
+              Q49. check the perfect square?
+              Q50. sum of digits in the num?
+              Q51. convert dec to bin?
+              Q52. count the num of digits in a num?
+              Q53. Swap two num without using a third variable?
+*/
+
+	int Q40[$];
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q40. generate fibonacci series in array----------\n");
+
+		Q40.push_back(0);
+		Q40.push_back(1);
+
+		for(int i=2; i<10; i++) begin
+			Q40.push_back(Q40[i-1] + Q40[i-2]);
+		end
+
+		$display("Q40 : %0p", Q40);
+	end
+
+	int Q41[$];
+	int num;	
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q41. factorial of a num----------\n");
+
+		num = 5; // change this value to calculate factorial of different numbers
+		Q41.push_back(1); // 0! = 1
+
+		for(int i=1; i<=num; i++) begin
+			Q41.push_back(Q41[i-1] * i);
+		end
+
+		$display("Factorial of %0d is : %0d", num, Q41[num]);
+	end
+
+
+	int Q42[$];
+	int prime_num;	
+	bit is_prime;	
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q42. check if a num is prime or not----------\n");
+
+		prime_num = 11; // change this value to check for different numbers
+		is_prime = 1;
+
+		if(prime_num < 2) begin
+			is_prime = 0;
+		end
+		else begin
+			for(int i=2; i*i <= prime_num; i++) begin // check divisibility up to the square root of the number
+				if(prime_num % i == 0) begin
+					is_prime = 0;
+					break;
+				end
+			end
+		end
+
+		if(is_prime) begin
+			$display("%0d is a prime number", prime_num);
+		end
+		else begin
+			$display("%0d is not a prime number", prime_num);
+		end
+	end
+
+	int Q43[$];
+	int even_count, odd_count;	
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q43. count even and odd numbers----------\n");
+
+		Q43 = '{1,2,3,4,5,6,7,8,9,10,100,1000,31};
+		even_count = 0;
+		odd_count = 0;
+
+		foreach(Q43[i]) begin
+			if(Q43[i] % 2 == 0) begin
+				even_count++;
+			end
+			else begin
+				odd_count++;
+			end
+		end
+
+		$display("Even count : %0d", even_count);
+		$display("Odd count : %0d", odd_count);
+	end
+
+	int Q44[$];
+	int year[$];	
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q44. check if a year is leap year or not----------\n");
+
+		year = '{2028, 2001, 1996, 2020, 2016, 2005, 2007, 2101}; // change this value to check for different years
+
+		$display("year : %0p", year);
+
+		foreach(year[i]) begin
+			if((year[i] % 4 == 0 && year[i] % 100 != 0) || (year[i] % 400 == 0)) begin // check leap year condition
+				Q44.push_back(1); // leap year
+				$display("%0d is a leap year", year[i]);
+			end
+			else begin
+				Q44.push_back(0); // not a leap year
+				$display("%0d is not a leap year", year[i]);
+			end
+	    end
+	end
+
+	int Q45[$];
+	int num_45;	
+	int temp_45; // to store the original number
+	int reversed; // to store the reversed number
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q45. check if a num is palindrome or not----------\n");
+
+		/*
+		--> A palindrome is a number (or word) that reads the same forwards and backwards.
+			Example:
+				Number: 12321
+				Forward: 12321
+				Backward: 12321
+				Both are the same, so it is a palindrome.
+		*/
+
+		num_45 = 12321; // change this value to check for different numbers
+		temp_45 = num_45;
+		reversed = 0;
+
+		while(temp_45 > 0) begin
+			reversed = reversed * 10 + (temp_45 % 10);
+			temp_45 = temp_45 / 10;
+		end
+
+		/*
+			Iteration 1: reversed = 0 * 10 + 1 = 1, temp_45 = 1232
+			Iteration 2: reversed = 1 * 10 + 2 = 12, temp_45 = 123
+			Iteration 3: reversed = 12 * 10 + 3 = 123, temp_45 = 12
+			Iteration 4: reversed = 123 * 10 + 2 = 1232, temp_45 = 1
+			Iteration 5: reversed = 1232 * 10 + 1 = 12321, temp_45 = 0
+		*/
+
+		if(reversed == num_45) begin
+			Q45.push_back(1); // palindrome
+			$display("%0d is a palindrome number", num_45);
+		end
+		else begin
+			Q45.push_back(0); // not a palindrome
+			$display("%0d is not a palindrome number", num_45);
+		end
+	end
+
+	int a, b;
+	int gcd;
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q46. find gcd of two numbers----------\n");
+
+		a = 48; // change these values to find GCD of different numbers
+		b = 18; // change these values to find GCD of different numbers
+
+		// Finding GCD using Euclidean algorithm
+		while(b != 0) begin
+			gcd = b; // store the current value of b
+			b = a % b; // update b to the remainder of a divided by b
+			a = gcd;
+		end
+		/*
+			Euclidean algorithm works by repeatedly replacing the larger number with the remainder of the division of the two numbers until one of them becomes zero.
+			The last non-zero remainder is the GCD.
+			For example, to find GCD of 48 and 18:
+				1. 48 % 18 = 12 → a=18, b=12
+				2. 18 % 12 = 6 → a=12, b=6
+				3. 12 % 6 = 0 → a=6, b=0
+			GCD is 6
+
+		*/
+
+		$display("GCD is : %0d", gcd);
+	end
+
+
+	// Input array
+	int Q47[] = '{12, 18, 30}; 
+	int result; // to store the result of LCM
+	int i; // loop variable
+	int temp; // temporary variable for GCD calculation
+
+	function int gcd_47(int a, int b);
+		while (b != 0) begin
+			temp = b;
+			b = a % b;
+			a = temp;
+		end
+		return a;
+	endfunction
+
+	function int lcm_47(int a, int b);
+		return (a * b) / gcd_47(a, b);
+	endfunction
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\n---------Q47. find lcm of array----------\n");
+
+		result = 1; // Initialize result to 1
+		i = 0;
+
+		// Handle empty array
+		if (Q47.size() == 0) begin
+			$display("Array is empty.");
+		end 
+		else begin
+			result = Q47[0];
+
+			// Loop through array to calculate LCM iteratively
+			for (i = 1; i < Q47.size(); i++) begin
+				result = lcm_47(result, Q47[i]);
+			end
+
+			$display("LCM of array = %0d", result);
+		end
+	end
+
+	int Q48[$];
+	int num_48;
+
+	function int factorial(int n);
+		if (n == 0) begin
+			return 1;
+		end
+		else begin
+			return n * factorial(n - 1);
+		end
+	endfunction
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q48. find factorial of a number----------\n");
+
+		num_48 = 5; // change this value to find factorial of different numbers
+
+		$display("Factorial of %0d is : %0d", num_48, factorial(num_48));
+	end
+
+
+	int Q49[$];
+	int num_49;	
+	int sqrt_num; // to store the square root of the number	
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q49. check if a number is perfect square or not----------\n");
+
+		num_49 = 15; // change this value to check for different numbers
+
+		if (num_49 < 0) begin
+			$display("%0d is not a perfect square", num_49);
+		end
+		else begin
+			sqrt_num = $sqrt(num_49);
+			if (sqrt_num * sqrt_num == num_49) begin
+				Q49.push_back(1); // perfect square
+				$display("%0d is a perfect square", num_49);
+			end
+			else begin
+				Q49.push_back(0); // not a perfect square
+				$display("%0d is not a perfect square", num_49);
+			end
+		end
+	end
+
+	int Q50[$];
+	int num_50;	
+	int sum_50; // to store the sum of digits
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q50. find the sum of digits in a number----------\n");
+
+		num_50 = 12345; // change this value to find sum of digits of different numbers
+		sum_50 = 0;
+
+		while (num_50 > 0) begin
+			sum_50 += num_50 % 10; // add the last digit to sum
+			num_50 /= 10; // remove the last digit
+		end
+
+		Q50.push_back(sum_50);
+		$display("Sum of digits is : %0d", sum_50);
+	end
+
+
+	int Q51[$];
+	int num_51;
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q51. convert decimal to binary----------\n");
+
+		num_51 = 10; // change this value to convert different numbers
+
+		while (num_51 > 0) begin
+			Q51.push_back(num_51 % 2); // store the remainder (binary digit)
+			num_51 /= 2; // divide by 2 to get the next digit
+		end
+
+		// Reverse the array to get the correct binary representation
+		Q51.reverse();
+
+		$display("Binary representation : %0p", Q51);
+	end
+
+	int Q52[$];
+	int num_52;
+	int count_52; // to count the number of digits
+
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\---------Q52. count the number of digits in a number----------\n");
+
+		num_52 = 12345; // change this value to count digits of different numbers
+	 	count_52 = 0;
+
+		while (num_52 > 0) begin
+			count_52++;
+			num_52 /= 10; // remove the last digit
+		end
+
+		Q52.push_back(count_52);
+		$display("Number of digits is : %0d", count_52);
+	end
+
+
+	int Q53_a, Q53_b;
+	initial begin
+		$display("\n--------------------------------------------------------------------------------------\n");
+		$display("\n---------Q53. swap two numbers without using a third variable----------\n");
+
+		Q53_a = 5; // change these values to swap different numbers
+		Q53_b = 10;
+
+		$display("Before swapping: Q53_a = %0d, Q53_b = %0d", Q53_a, Q53_b);
+
+		Q53_a = Q53_a + Q53_b; // Step 1: Add both numbers
+		Q53_b = Q53_a - Q53_b; // Step 2: Subtract the new value of Q53_b from the sum
+		Q53_a = Q53_a - Q53_b; // Step 3: Subtract the new value of Q53_a from the sum
+
+		$display("After swapping: Q53_a = %0d, Q53_b = %0d", Q53_a, Q53_b);
+	end
+
+endmodule : PS4
+
+
 module top_level();
 
 	PS1 ps1();
 	PS2 ps2();
 	PS3 ps3();
+	PS4 ps4();
 
 	initial begin
 		$display("\n--------------------------------------------------------------------------------------\n");
 	end
+
 endmodule : top_level
