@@ -744,8 +744,4 @@ r1
 !s85 0
 31
 !s108 1748580741.000000
-!s107 1_verilog_data_types.sv|
-!s90 -reportprogress|300|-sv|1_verilog_data_types.sv|
-!i113 0
-R10
-R11
+!

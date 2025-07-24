@@ -1,4 +1,4 @@
 vlib work
-vlog -sv 11_array_practice.sv
-vsim -voptargs=+acc work.top_level
+vlog -sv 13_union_datatype.sv
+vsim -voptargs=+acc work.top_union
 run -all
