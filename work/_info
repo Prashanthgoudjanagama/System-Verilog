@@ -63,10 +63,10 @@ n@_opt2
 R13
 R0
 T_opt3
-!s110 1753344753
-VB=e5E_4f_F0^MW79RkAUM1
-04 9 4 work top_union fast 0
-=1-d41b810174b1-6881eaf1-51-35b0
+!s110 1753350463
+V7z7hEhAeR[BAUnYbE_bdQ0
+04 8 4 work top_enum fast 0
+=1-d41b810174b1-6882013f-173-2064
 R12
 R11
 n@_opt3
@@ -265,6 +265,78 @@ r1
 !i113 0
 R10
 R11
+venum_ex2
+R1
+Z29 !s110 1753350461
+!i10b 1
+!s100 Vi`N_aj0J4::3jS=<Z_BA1
+IgCB@YgG3b1mhQ]<Z40Y_e2
+R14
+Z30 !s105 _14_enumaration_sv_unit
+S1
+R2
+Z31 w1753350459
+Z32 814_enumaration.sv
+Z33 F14_enumaration.sv
+L0 52
+R6
+r1
+!s85 0
+31
+Z34 !s108 1753350461.000000
+Z35 !s107 14_enumaration.sv|
+Z36 !s90 -reportprogress|300|-sv|14_enumaration.sv|
+!i113 0
+R10
+R11
+venum_ex3
+R1
+R29
+!i10b 1
+!s100 3Ngk4B9OPAk<0YLmLOOeY2
+I9`VZmZd^F8P8U4olSQQo32
+R14
+R30
+S1
+R2
+R31
+R32
+R33
+L0 75
+R6
+r1
+!s85 0
+31
+R34
+R35
+R36
+!i113 0
+R10
+R11
+venum_syntax
+R1
+R29
+!i10b 1
+!s100 dMHKzeXdRC]LLAoW^8fDH2
+IJnY@hk2FZef35@[f1OLC00
+R14
+R30
+S1
+R2
+R31
+R32
+R33
+L0 27
+R6
+r1
+!s85 0
+31
+R34
+R35
+R36
+!i113 0
+R10
+R11
 vloops
 R1
 !s110 1748697178
@@ -363,100 +435,100 @@ R10
 R11
 vPS1
 R1
-Z29 !s110 1753253033
+Z37 !s110 1753253033
 !i10b 1
 !s100 Emc0F@:JK4h<[a3Nh56oK1
 IMLMBX6kIlUKW[Yd606zo=1
 R14
-Z30 !s105 _11_array_practice_sv_unit
+Z38 !s105 _11_array_practice_sv_unit
 S1
 R2
-Z31 w1753253023
-Z32 811_array_practice.sv
-Z33 F11_array_practice.sv
+Z39 w1753253023
+Z40 811_array_practice.sv
+Z41 F11_array_practice.sv
 L0 68
 R6
 r1
 !s85 0
 31
-Z34 !s108 1753253033.000000
-Z35 !s107 11_array_practice.sv|
-Z36 !s90 -reportprogress|300|-sv|11_array_practice.sv|
+Z42 !s108 1753253033.000000
+Z43 !s107 11_array_practice.sv|
+Z44 !s90 -reportprogress|300|-sv|11_array_practice.sv|
 !i113 0
 R10
 R11
 n@p@s1
 vPS2
 R1
-R29
+R37
 !i10b 1
 !s100 RlXlI5mz;KhgPh[Adnfg@0
 IbC696g9=2VJz=j_On7Fkg3
 R14
-R30
+R38
 S1
 R2
-R31
-R32
-R33
+R39
+R40
+R41
 L0 407
 R6
 r1
 !s85 0
 31
-R34
-R35
-R36
+R42
+R43
+R44
 !i113 0
 R10
 R11
 n@p@s2
 vPS3
 R1
-R29
+R37
 !i10b 1
 !s100 mR>Nk7mKzz^jl?PklNM9O0
 IC]l`?2O:3QjZcaFo_7F2;2
 R14
-R30
+R38
 S1
 R2
-R31
-R32
-R33
+R39
+R40
+R41
 L0 859
 R6
 r1
 !s85 0
 31
-R34
-R35
-R36
+R42
+R43
+R44
 !i113 0
 R10
 R11
 n@p@s3
 vPS4
 R1
-R29
+R37
 !i10b 1
 !s100 9o0KMTcB1fBmK[>WDzW7m3
 Ij>dm7YCgAgfTMZ@0AI1[O0
 R14
-R30
+R38
 S1
 R2
-R31
-R32
-R33
+R39
+R40
+R41
 L0 1254
 R6
 r1
 !s85 0
 31
-R34
-R35
-R36
+R42
+R43
+R44
 !i113 0
 R10
 R11
@@ -629,12 +701,12 @@ R9
 !i113 0
 R10
 R11
-vtop_level
+vtop_enum
 R1
 R29
 !i10b 1
-!s100 `:Qlmk>3HbPUmPc_aiP:>0
-IJac^RhQ`2K3ihQKFW@Jkf0
+!s100 4<>T@cK=IQ5Qhn]<d4gWY2
+IIzcL^TW8P<QIE>io?K]CS0
 R14
 R30
 S1
@@ -642,7 +714,7 @@ R2
 R31
 R32
 R33
-L0 1633
+L0 126
 R6
 r1
 !s85 0
@@ -650,6 +722,30 @@ r1
 R34
 R35
 R36
+!i113 0
+R10
+R11
+vtop_level
+R1
+R37
+!i10b 1
+!s100 `:Qlmk>3HbPUmPc_aiP:>0
+IJac^RhQ`2K3ihQKFW@Jkf0
+R14
+R38
+S1
+R2
+R39
+R40
+R41
+L0 1633
+R6
+r1
+!s85 0
+31
+R42
+R43
+R44
 !i113 0
 R10
 R11

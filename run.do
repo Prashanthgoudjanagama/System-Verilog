@@ -1,4 +1,4 @@
 vlib work
-vlog -sv 13_union_datatype.sv
-vsim -voptargs=+acc work.top_union
+vlog -sv 14_enumaration.sv
+vsim -voptargs=+acc work.top_enum
 run -all
