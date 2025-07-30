@@ -1,4 +1,4 @@
 vlib work
-vlog -sv 14_enumaration.sv
-vsim -voptargs=+acc work.top_enum
+vlog -sv 16_2_task_function_passing_methods.sv
+vsim -voptargs=+acc work.top_passing
 run -all
