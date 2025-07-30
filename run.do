@@ -1,4 +1,4 @@
 vlib work
-vlog -sv 16_2_task_function_passing_methods.sv
-vsim -voptargs=+acc work.top_passing
+vlog -sv 17_fork_join.sv
+vsim -voptargs=+acc work.top_fork_join
 run -all
