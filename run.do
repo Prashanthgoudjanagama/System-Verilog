@@ -1,4 +1,4 @@
 vlib work
-vlog -sv 19_Oops_intro.sv
-vsim -voptargs=+acc work.top_module
+vlog -sv 20_array_of_object_creation.sv
+vsim -voptargs=+acc work.top_objects
 run -all
