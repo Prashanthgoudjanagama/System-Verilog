@@ -59,7 +59,7 @@ class fruit;
     int rate;
 
     // defualt Constructor
-    function new(int rate);
+    function new(int rate); // it will return value, so it can't be void type. 
         this.rate = rate;   // this refers to current class scope
     endfunction : new
 
@@ -76,7 +76,7 @@ module associative_array();
         ass_a[apple] = new(200);
 
         foreach(ass_a[i]) begin
-            $display("\t\tass_a[%0s] = %0d", i.name(), ass_a[i].rate);
+            $display("\t\tass_a[%0s]:  rate --> %0d", i.name(), ass_a[i].rate);
         end
     end
 
