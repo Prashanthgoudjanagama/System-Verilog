@@ -1,4 +1,4 @@
 vlib work
-vlog -sv 21_Oops_static_prop_and_methods.sv
-vsim -voptargs=+acc work.top_fun
+vlog -sv 22_Oops_Shallow_and_Deep_copies.sv
+vsim -voptargs=+acc work.top_copies
 run -all

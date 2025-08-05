@@ -114,11 +114,24 @@ class practice;
 
 endclass : practice
 
+//--------------------- SCOPE RESOLUTION OPERATOR ---------------------
+
+class static_methods_without_object_creation;
+
+    static int cnt = 0;
+
+    static function void incr();
+        cnt++;
+    endfunction : incr
+
+endclass : static_methods_without_object_creation
+
 
 module top_fun();
 
     static_prop_and_methods tr, tr1, tr2[5];
     practice p[3];
+    static_methods_without_object_creation s_tr;
 
     initial begin
         $display("\n______________________ normal function _________________________");
@@ -145,6 +158,13 @@ module top_fun();
             p[i].f2(); // static function
             p[i].f3(); // function static
         end
+
+        $display("\n---------------------- static_methods_without_object_creation -------------------------");
+        $display("\n\t______________________ SCOPE RESOLUTION OPERATOR & class handle _________________________");
+        static_methods_without_object_creation::incr();     // accessing the static method
+        s_tr.incr();    // accessing the method without creating the object.
+        $display("\tcall using handle --> cnt : %0d", s_tr.cnt);
+        $display("\tcall using object with SRO --> cnt : %0d", static_methods_without_object_creation::cnt);
     end
 
 endmodule : top_fun
