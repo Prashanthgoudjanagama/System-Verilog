@@ -9,7 +9,8 @@
     Shallow copy:
         --> Class properties are copied.
         --> Class Objects are not copied, only instance handles are copied.
-        --> If the original object is modified, the changes will be reflected in the copied object vise versa.
+        --> If the original object is modified, the changes will be reflected 
+            in the copied object vise versa.
         --> This is because both objects share the same instance of the class object.
 
 _______________________________________________________________________________________________________________
@@ -126,7 +127,7 @@ ________________________________________________________________________________
         +----------->| airbase_name      = "WAC_DELHI";          |               |
         |            | total_aircraft_no = 34;                   |               |
         |            +-------------------------------------------+               |
-        |
+        |                                                                        |
         |            +-------------------------------------------+               |
         |            | airbase_name      = "SAC_THIRCHI";        |               |
         |            | total_aircraft_no = 15;                   |<--------------+
@@ -232,3 +233,64 @@ module top_copies();
     deepcopy dc();
 
 endmodule : top_copies
+
+
+/*
+
+_______________________________________________________________________________________________________
+
+--------> simulation results:
+
+#   ____________________________ SHALLOW_COPY ____________________________
+# 
+# -------- display using ab1 ------
+# 
+# 	[air_base]  :: airbase_name -> WAC_DELHI, Total_NO_of_aircrafts -> 34
+# 	[air_craft] :: aircraft_name -> Tejas, flight_num -> 1327
+# 
+# -------- display using ab2 [after shallow copy ab1 --> ab2]------
+# 
+# 	[air_base]  :: airbase_name -> WAC_DELHI, Total_NO_of_aircrafts -> 34
+# 	[air_craft] :: aircraft_name -> Tejas, flight_num -> 1327
+# 
+# -------- after changing values ------
+# 
+# 
+# 	-------- display using ab1 ------
+# 
+# 	[air_base]  :: airbase_name -> SAC_THIRCHI, Total_NO_of_aircrafts -> 15
+# 	[air_craft] :: aircraft_name -> RAFALE, flight_num -> 4597
+# 
+# 	-------- display using ab2 ------
+# 
+# 	[air_base]  :: airbase_name -> WAC_DELHI, Total_NO_of_aircrafts -> 34
+# 	[air_craft] :: aircraft_name -> RAFALE, flight_num -> 4597
+# 
+# ____________________________ DEEP_COPY ____________________________
+# 
+# -------- display using a1 ------
+# 
+# 	[air_base]  :: airbase_name -> WAC_DELHI, Total_NO_of_aircrafts -> 34
+# 	[air_craft] :: aircraft_name -> Tejas, flight_num -> 1327
+# 
+# -------- display using a2 [after deep copy a1 --> a2]------
+# 
+# 	[air_base]  :: airbase_name -> WAC_DELHI, Total_NO_of_aircrafts -> 34
+# 	[air_craft] :: aircraft_name -> Tejas, flight_num -> 1327
+# 
+# -------- after changing values ------
+# 
+# 
+# 	-------- display using a1 ------
+# 
+# 	[air_base]  :: airbase_name -> SAC_THIRCHI, Total_NO_of_aircrafts -> 15
+# 	[air_craft] :: aircraft_name -> RAFALE, flight_num -> 4597
+# 
+# 	-------- display using a2 ------
+# 
+# 	[air_base]  :: airbase_name -> WAC_DELHI, Total_NO_of_aircrafts -> 34
+# 	[air_craft] :: aircraft_name -> Tejas, flight_num -> 1327
+
+______________________________________________________________________________________________
+
+*/
