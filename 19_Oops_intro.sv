@@ -123,7 +123,7 @@ endmodule : different_memory_location
 
 
 // ======================= top_module ===========================
-module top_module();
+module top_Oops_intro();
 
     basic_class_test bs1();
     sharing_same_memory sh1();
@@ -133,4 +133,22 @@ module top_module();
         $display("\n----------------------------------------------------------------");
     end
 
-endmodule : top_module
+endmodule : top_Oops_intro
+
+/*
+# simulation :
+--------------------- class and object creation ----------------
+# 		land : 4, home : my_home
+# 
+# ---------- both handles uses same memory location ----------
+# 		ts1 --> land : 50, home : home-1
+# 		ts2 --> land : 3, home : home-2
+# 		ts1 --> land : 3, home : home-2
+# 
+# ---------- both handles uses different memory location ----------
+# 		td1 --> land : 50, home : home-1
+# 		td2 --> land : 3, home : home-2
+# 		td1 --> land : 50, home : home-1
+# 
+
+*/

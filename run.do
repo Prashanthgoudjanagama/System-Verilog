@@ -1,4 +1,4 @@
 vlib work
-vlog -sv 22_Oops_Shallow_and_Deep_copies.sv
-vsim -voptargs=+acc work.top_copies
+vlog -sv 31_typedef_class.sv
+vsim -voptargs=+acc work.top_typedef
 run -all

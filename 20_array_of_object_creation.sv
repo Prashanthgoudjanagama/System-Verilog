@@ -90,3 +90,31 @@ module top_objects;
     associative_array aa();
 
 endmodule: top_objects
+
+/*
+# ---------- fixed array of object -----------
+# 		Object ID: 0, Name: fixed
+# 		Object ID: 1, Name: fixed
+# 		Object ID: 2, Name: fixed
+# 		Object ID: 3, Name: fixed
+# 		Object ID: 4, Name: fixed
+# 
+# ---------- dynamic array of object -----------
+# 		Object ID: 0, Name: Dynamic
+# 		Object ID: 1, Name: Dynamic
+# 		Object ID: 2, Name: Dynamic
+# 		Object ID: 3, Name: Dynamic
+# 		Object ID: 4, Name: Dynamic
+# 		Object ID: 5, Name: Dynamic
+# 		Object ID: 6, Name: Dynamic
+# 		Object ID: 7, Name: Dynamic
+# 		Object ID: 8, Name: Dynamic
+# 		Object ID: 9, Name: Dynamic
+# 
+# ---------- Associative array of object -----------
+# 		ass_a[apple]:  rate --> 200
+# 		ass_a[mango]:  rate --> 120
+# 		ass_a[banana]:  rate --> 75
+
+
+*/

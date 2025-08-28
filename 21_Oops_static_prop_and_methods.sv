@@ -170,5 +170,50 @@ module top_fun();
 endmodule : top_fun
 
 
+/*
+# ______________________ normal function _________________________
+# 
+# 	 --> data : 50, s_data : 500
+# 
+# ______________________ static function _________________________
+# 
+# 	 --> data : 0, s_data1 : 77
+# 
+# ______________________ function static _________________________
+# 	 --> d3 : 1, s3 : 1, a3 : 1
+# 	 --> d3 : 2, s3 : 2, a3 : 1
+# 	 --> d3 : 3, s3 : 3, a3 : 1
+# 	 --> d3 : 4, s3 : 4, a3 : 1
+# 	 --> d3 : 5, s3 : 5, a3 : 1
+# 
+# ______________________ practice _________________________
+# 
+# 	 inside normal functon --> d : 1, s : 1
+# 
+# 	 inside static function --> d1 : s1 : 1
+# 
+# 	 inside function static --> d : 1, status : 1, d1 : 1
+# 
+# 	 inside normal functon --> d : 1, s : 2
+# 
+# 	 inside static function --> d1 : s1 : 2
+# 
+# 	 inside function static --> d : 1, status : 2, d1 : 2
+# 
+# 	 inside normal functon --> d : 1, s : 3
+# 
+# 	 inside static function --> d1 : s1 : 3
+# 
+# 	 inside function static --> d : 1, status : 3, d1 : 3
+# 
+# ---------------------- static_methods_without_object_creation -------------------------
+# 
+# 	______________________ SCOPE RESOLUTION OPERATOR & class handle _________________________
+# 	call using handle --> cnt : 2
+# 	call using object with SRO --> cnt : 2
+
+*/
+
+
 
 
