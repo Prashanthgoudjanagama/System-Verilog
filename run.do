@@ -1,4 +1,4 @@
 vlib work
-vlog -sv 31_typedef_class.sv
-vsim -voptargs=+acc work.top_typedef
+vlog -sv 34_merging_events.sv
+vsim -voptargs=+acc work.top_merge
 run -all
