@@ -35,7 +35,18 @@ ________________________________________________________________________________
                 |                | • Unblocks the process even if triggering an event and waiting for an event happen at the same time|
                 +----------------+----------------------------------------------------------------------------------------------------+
 
-_____________________________________________________________________________________
+    Final Observations:
+        1. -> at 100ns and @ at 0ns ====> display all the displays.
+        2. -> at 0ns and @ at 100ns ====> after @ displays will not displays.
+                                    ----> use NBA triggering :: ->>.
+        3. -> and @ at 0ns          ====> not capture after @.
+                                    ----> use wait(event.triggered).
+        4. wait_order :: 
+                -> In this two types are possible: in_order and out_of_order.
+        5. Merging events:
+                -> waiting of other event is avoided.
+
+_____________________________________________________________________________________________________________________
 
 */
 
@@ -51,7 +62,6 @@ module event_ex1();
         $display("[%0t] : before event triggered", $time);
         -> e1;
         $display("[%0t] : after event triggered", $time);
-        
     endtask : process1
 
     task process2();

@@ -1,4 +1,4 @@
 vlib work
-vlog -sv 34_merging_events.sv
-vsim -voptargs=+acc work.top_merge
+vlog -sv 36_IPC_mailbox.sv
+vsim -voptargs=+acc work.IPC_mail
 run -all
